@@ -83,6 +83,17 @@ void UART_ReadString(char *buffer,uint32_t maxLen){
 }
 
 
+int String_Compare(const char *s1, const char *s2){
+	while(*s1 != '\0' && *s2 != '\0'){
+		if (*s1!=*s2) return 0;
+		else{
+			s1++; s2++;
+		}
+	}
+//	if(*s1!=*s2) return 0;
+//	else return 1;
+	return(*s1==*s2);
+}
 
 
 

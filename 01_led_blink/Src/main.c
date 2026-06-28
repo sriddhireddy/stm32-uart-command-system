@@ -19,10 +19,18 @@ int main(void){
 //		UART_WriteChar(data);
 
 		UART_ReadString(buffer,sizeof(buffer));
+//
+//		UART_WriteString("You typed: ");
+//		UART_WriteString(buffer);
+//		UART_WriteString("\r\n");
 
-		UART_WriteString("You typed: ");
-		UART_WriteString(buffer);
-		UART_WriteString("\r\n");
+		if (String_Compare(buffer,"LEDON")){
+			UART_WriteString("recognized\r\n");
+		}
+		else{
+			UART_WriteString("not recognized\r\n");
+		}
+
 	}
 
 }
