@@ -3,19 +3,26 @@
 
 
 int main(void){
-	char data;
+	//char data;
+	char buffer[20];
 
 	GPIO_Init();
 	UART_Init();
 
 	while(1){
 
-		data= UART_ReadChar();
+//		data= UART_ReadChar();
+//
+//		if (data>='a' && data<='z')
+//			data -= ('a'-'A');
+//
+//		UART_WriteChar(data);
 
-		if (data>='a' && data<='z')
-			data -= ('a'-'A');
+		UART_ReadString(buffer,sizeof(buffer));
 
-		UART_WriteChar(data);
+		UART_WriteString("You typed: ");
+		UART_WriteString(buffer);
+		UART_WriteString("\r\n");
 	}
 
 }

@@ -62,6 +62,26 @@ char UART_ReadChar(void){
 	return (char)USART2->DR; //char implies i want only lower 8 bits (char-8bits)
 }
 
+void UART_ReadString(char *buffer,uint32_t maxLen){
+	uint32_t count=0;
+
+    if (maxLen == 0) return;
+
+	while(count < maxLen-1){
+
+		*buffer = UART_ReadChar();
+		if(*buffer == '\r'){
+			*buffer = '\0';
+			return;
+		}
+
+		buffer++;
+		count++;
+	}
+
+	*buffer = '\0';
+}
+
 
 
 
