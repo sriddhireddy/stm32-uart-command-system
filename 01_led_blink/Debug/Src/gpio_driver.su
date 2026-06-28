@@ -3,3 +3,4 @@
 ../Src/gpio_driver.c:20:13:delay	16	static
 ../Src/gpio_driver.c:24:6:GPIO_SetPin	4	static
 ../Src/gpio_driver.c:28:6:GPIO_ResetPin	4	static
+../Src/gpio_driver.c:32:9:GPIO_ReadPin	4	static

@@ -29,6 +29,12 @@ void GPIO_ResetPin(void){
 	GPIOA->ODR &= ~PIN5;
 }
 
+uint8_t GPIO_ReadPin(void){
+//	if(GPIOA->ODR & PIN5) return 1;
+//	else return 0;
+
+	return (GPIOA->ODR & PIN5) ? 1 : 0;
+}
 
 
 

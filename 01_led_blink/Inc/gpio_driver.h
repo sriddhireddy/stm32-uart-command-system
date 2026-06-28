@@ -10,4 +10,6 @@ void GPIO_TogglePin(void);
 void GPIO_SetPin(void);
 void GPIO_ResetPin(void);
 
+uint8_t GPIO_ReadPin(void);
+
 #endif /* GPIO_DRIVER_H_ */
