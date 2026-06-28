@@ -2,14 +2,14 @@
 #include "uart_driver.h"
 #include "command_processor.h"
 
-
-
 int main(void){
 	//char data;
 	char buffer[20];
 
 	GPIO_Init();
 	UART_Init();
+
+
 
 	while(1){
 
