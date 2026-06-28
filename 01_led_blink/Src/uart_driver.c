@@ -13,6 +13,8 @@
 #define CR1_TE			(1U<<3)
 #define CR1_RE			(1U<<2)
 
+#define SR_TXE			(1U<<7)
+
 void UART_Init(void){
 
 	RCC->AHB1ENR |= GPIOAEN;
@@ -36,3 +38,33 @@ void UART_Init(void){
 	USART2->CR1 |= (CR1_TE | CR1_RE | CR1_UE);
 
 }
+
+void UART_WriteChar(char c){
+
+	while(!(USART2->SR & SR_TXE)){} //polling
+
+	USART2->DR = c;
+}
+
+void UART_WriteString(const char *str){ //const implies the func will NOT modify the string
+
+	while(*str){ //same as *str != "\0" as \0 equivalent to 0
+		UART_WriteChar(*str);
+		str++;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

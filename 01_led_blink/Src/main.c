@@ -9,7 +9,9 @@ int main(void){
 
 	while(1){
 
-		GPIO_TogglePin();
+		UART_WriteString("STM32 Ready!\r\n");
+
+        for (volatile int i = 0; i < 1000000; i++);
 	}
 
 }
