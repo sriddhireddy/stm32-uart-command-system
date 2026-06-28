@@ -30,6 +30,16 @@ int main(void){
 		else if (String_Compare(buffer,"LEDOFF")){
 			GPIO_ResetPin();
 		}
+		else if (String_Compare(buffer,"HELP")){
+			UART_WriteString("\r\n");
+			UART_WriteString("Available Commands\r\n");
+			UART_WriteString("------------------\r\n");
+			UART_WriteString("LEDON  - Turn LED ON\r\n");
+			UART_WriteString("LEDOFF - Turn LED OFF\r\n");
+			UART_WriteString("HELP   - Show commands\r\n");
+			UART_WriteString("STATUS - Show LED status\r\n");
+			UART_WriteString("\r\n");
+		}
 		else{
 			UART_WriteString("not recognized\r\n");
 		}
