@@ -125,6 +125,12 @@ STATUS
 LED Status : ON
 ```
 
+## DEMO Images
+
+![DEMO SETUP](images/demo_setup.png)
+
+![DEMO](images/demo1.png)
+
 ---
 
 ## GPIO Driver API
