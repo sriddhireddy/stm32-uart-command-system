@@ -7,4 +7,7 @@
 void GPIO_Init(void);
 void GPIO_TogglePin(void);
 
+void GPIO_SetPin(void);
+void GPIO_ResetPin(void);
+
 #endif /* GPIO_DRIVER_H_ */

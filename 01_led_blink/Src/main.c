@@ -25,7 +25,10 @@ int main(void){
 //		UART_WriteString("\r\n");
 
 		if (String_Compare(buffer,"LEDON")){
-			UART_WriteString("recognized\r\n");
+			GPIO_SetPin();
+		}
+		else if (String_Compare(buffer,"LEDOFF")){
+			GPIO_ResetPin();
 		}
 		else{
 			UART_WriteString("not recognized\r\n");

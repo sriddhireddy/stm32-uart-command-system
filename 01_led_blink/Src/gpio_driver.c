@@ -20,3 +20,22 @@ void GPIO_TogglePin(void){
 static void delay(void){
 	for(volatile int i=0;i<100000;i++){};
 }
+
+void GPIO_SetPin(void){
+	GPIOA->ODR |= PIN5;
+}
+
+void GPIO_ResetPin(void){
+	GPIOA->ODR &= ~PIN5;
+}
+
+
+
+
+
+
+
+
+
+
+
