@@ -3,15 +3,19 @@
 
 
 int main(void){
+	char data;
 
 	GPIO_Init();
 	UART_Init();
 
 	while(1){
 
-		UART_WriteString("STM32 Ready!\r\n");
+		data= UART_ReadChar();
 
-        for (volatile int i = 0; i < 1000000; i++);
+		if (data>='a' && data<='z')
+			data -= ('a'-'A');
+
+		UART_WriteChar(data);
 	}
 
 }

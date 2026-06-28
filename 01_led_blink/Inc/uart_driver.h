@@ -6,5 +6,6 @@
 void UART_Init(void);
 void UART_WriteChar(char c);
 void UART_WriteString(const char *str);
+char UART_ReadChar(void);
 
 #endif /* UART_DRIVER_H_ */

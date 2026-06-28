@@ -14,6 +14,7 @@
 #define CR1_RE			(1U<<2)
 
 #define SR_TXE			(1U<<7)
+#define SR_RXNE			(1U<<5)
 
 void UART_Init(void){
 
@@ -54,6 +55,12 @@ void UART_WriteString(const char *str){ //const implies the func will NOT modify
 	}
 }
 
+
+char UART_ReadChar(void){
+	while(!(USART2->SR & SR_RXNE)){}
+
+	return (char)USART2->DR; //char implies i want only lower 8 bits (char-8bits)
+}
 
 
 
