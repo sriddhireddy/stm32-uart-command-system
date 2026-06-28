@@ -2,18 +2,23 @@
 #include "gpio_driver.h"
 #include "uart_driver.h"
 
+#define CMD_LEDON     "LEDON"
+#define CMD_LEDOFF    "LEDOFF"
+#define CMD_HELP      "HELP"
+#define CMD_STATUS    "STATUS"
+
 void ProcessCommand(const char *buffer){
-	if (String_Compare(buffer,"LEDON")){
+	if (String_Compare(buffer,CMD_LEDON)){
 				GPIO_SetPin();
 				UART_WriteString("LED turned ON\r\n");
 
 		}
-		else if (String_Compare(buffer,"LEDOFF")){
+		else if (String_Compare(buffer,CMD_LEDOFF)){
 			GPIO_ResetPin();
 			UART_WriteString("LED turned OFF\r\n");
 
 		}
-		else if (String_Compare(buffer,"HELP")){
+		else if (String_Compare(buffer,CMD_HELP)){
 			UART_WriteString("\r\n");
 			UART_WriteString("Available Commands\r\n");
 			UART_WriteString("------------------\r\n");
@@ -23,7 +28,7 @@ void ProcessCommand(const char *buffer){
 			UART_WriteString("STATUS - Show LED status\r\n");
 			UART_WriteString("\r\n");
 		}
-		else if (String_Compare(buffer, "STATUS"))
+		else if (String_Compare(buffer, CMD_STATUS))
 		{
 			if (GPIO_ReadPin())		    {
 				UART_WriteString("LED Status : ON\r\n");
@@ -33,7 +38,8 @@ void ProcessCommand(const char *buffer){
 			}
 		}
 		else{
-			UART_WriteString("not recognized\r\n");
+			UART_WriteString("Unknown command.\r\n");
+			UART_WriteString("Type HELP for available commands.\r\n");
 		}
 }
 
