@@ -1,0 +1,3 @@
+../Src/gpio_driver.c:8:6:GPIO_Init	1
+../Src/gpio_driver.c:15:6:GPIO_TogglePin	1
+../Src/gpio_driver.c:20:13:delay	2

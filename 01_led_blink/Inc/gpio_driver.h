@@ -1,13 +1,9 @@
-/*
- * gpio_driver.h
- *
- *  Created on: 28-Jun-2026
- *      Author: murth
- */
 
 #ifndef GPIO_DRIVER_H_
 #define GPIO_DRIVER_H_
 
-
+#include "stm32f4xx.h"
+void GPIO_Init(void);
+void GPIO_TogglePin(void);
 
 #endif /* GPIO_DRIVER_H_ */

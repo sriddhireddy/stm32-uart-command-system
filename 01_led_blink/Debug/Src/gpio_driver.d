@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c ../Inc/gpio_driver.h \
+Src/gpio_driver.o: ../Src/gpio_driver.c ../Inc/gpio_driver.h \
  D:/reddy/stm32_baremetal/mcu1_projects/stm32\ uart\ command\ system/chip_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  D:/reddy/stm32_baremetal/mcu1_projects/stm32\ uart\ command\ system/chip_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h \
  D:/reddy/stm32_baremetal/mcu1_projects/stm32\ uart\ command\ system/chip_headers/CMSIS/Include/core_cm4.h \
