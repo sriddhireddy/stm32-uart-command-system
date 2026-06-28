@@ -13,8 +13,10 @@ void GPIO_Init(void){
 }
 
 void GPIO_TogglePin(void){
-	GPIOA->ODR^= PIN5;
-	delay();
+	while(1){
+		GPIOA->ODR^= PIN5;
+		delay();
+	}
 }
 
 static void delay(void){
